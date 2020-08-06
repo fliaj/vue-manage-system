@@ -9,8 +9,10 @@ import 'element-ui/lib/theme-chalk/index.css'; // 默认主题
 import './assets/css/icon.css';
 import './components/common/directives';
 import 'babel-polyfill';
+import echarts from 'echarts'
 
 Vue.config.productionTip = false;
+Vue.prototype.$echarts = echarts
 Vue.use(VueI18n);
 Vue.use(ElementUI, {
     size: 'small'
