@@ -5,7 +5,7 @@
                 <div ref="chart" style="width:100%;height:600px"></div>
          
         </el-row>
-        <el-row :gutter="20">
+        <!-- <el-row :gutter="20">
             <el-col :span="12">
                 <el-card shadow="hover">
                     <schart ref="bar" class="schart" canvasId="bar" :options="options"></schart>
@@ -16,7 +16,7 @@
                     <schart ref="line" class="schart" canvasId="line" :options="options2"></schart>
                 </el-card>
             </el-col>
-        </el-row>
+        </el-row> -->
     </div>
 </template>
 
@@ -25,57 +25,57 @@ import Schart from 'vue-schart';
 import bus from '../common/bus';
 export default {
     name: 'dashboard',
-    data() {
-        return {
-            name: localStorage.getItem('ms_username'),
-            options: {
-                type: 'bar',
-                title: {
-                    text: '最近一周各品类销售图'
-                },
-                xRorate: 25,
-                labels: ['周一', '周二', '周三', '周四', '周五'],
-                datasets: [
-                    {
-                        label: '家电',
-                        data: [234, 278, 270, 190, 230]
-                    },
-                    {
-                        label: '百货',
-                        data: [164, 178, 190, 135, 160]
-                    },
-                    {
-                        label: '食品',
-                        data: [144, 198, 150, 235, 120]
-                    }
-                ]
-            },
-            options2: {
-                type: 'line',
-                title: {
-                    text: '最近几个月各品类销售趋势图'
-                },
-                labels: ['6月', '7月', '8月', '9月', '10月'],
-                datasets: [
-                    {
-                        label: '家电',
-                        data: [234, 278, 270, 190, 230]
-                    },
-                    {
-                        label: '百货',
-                        data: [164, 178, 150, 135, 160]
-                    },
-                    {
-                        label: '食品',
-                        data: [74, 118, 200, 235, 90]
-                    }
-                ]
-            }
-        };
-    },
-    components: {
-        Schart
-    },
+    // data() {
+    //     return {
+    //         name: localStorage.getItem('ms_username'),
+    //         options: {
+    //             type: 'bar',
+    //             title: {
+    //                 text: '最近一周各品类销售图'
+    //             },
+    //             xRorate: 25,
+    //             labels: ['周一', '周二', '周三', '周四', '周五'],
+    //             datasets: [
+    //                 {
+    //                     label: '家电',
+    //                     data: [234, 278, 270, 190, 230]
+    //                 },
+    //                 {
+    //                     label: '百货',
+    //                     data: [164, 178, 190, 135, 160]
+    //                 },
+    //                 {
+    //                     label: '食品',
+    //                     data: [144, 198, 150, 235, 120]
+    //                 }
+    //             ]
+    //         },
+    //         options2: {
+    //             type: 'line',
+    //             title: {
+    //                 text: '最近几个月各品类销售趋势图'
+    //             },
+    //             labels: ['6月', '7月', '8月', '9月', '10月'],
+    //             datasets: [
+    //                 {
+    //                     label: '家电',
+    //                     data: [234, 278, 270, 190, 230]
+    //                 },
+    //                 {
+    //                     label: '百货',
+    //                     data: [164, 178, 150, 135, 160]
+    //                 },
+    //                 {
+    //                     label: '食品',
+    //                     data: [74, 118, 200, 235, 90]
+    //                 }
+    //             ]
+    //         }
+    //     };
+    // },
+    // components: {
+    //     Schart
+    // },
     computed: {
         role() {
             return this.name === 'admin' ? '超级管理员' : '普通用户';
@@ -89,11 +89,11 @@ export default {
             const chart = this.$refs.chart
             if (chart) {
             const myChart = this.$echarts.init(chart)
-            var baseName = "项目";
+            var baseName = "Store Warehouse";
             var chartData = {
-                '人员': ['人员1', '人员2', '人员3'],
-                '机构': ['机构1', '机构2', '机构3'],
-                '文献': ['文献1', '文献2', '文献3']
+                'Remove From Warehouse': ['Fee1', 'Fee2', 'Fee3'],
+                'Outbound To Customer': ['1', '2', '3'],
+                'Return to Warehouse': ['F1', 'F2', 'F3']
             };
             var datas = [{
                 name: baseName || '',
@@ -209,11 +209,11 @@ export default {
             window.addEventListener("resize", function() {
                 myChart.resize()
             })
-            }
-            this.$on('hook:destroyed',()=>{
+        }
+        this.$on('hook:destroyed',()=>{
                 window.removeEventListener("resize", function() {
-                myChart.resize();
-            });
+                    myChart.resize();
+                });
             })
         }
     }

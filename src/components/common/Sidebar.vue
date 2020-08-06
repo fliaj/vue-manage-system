@@ -56,15 +56,15 @@ export default {
         return {
             collapse: false,
             items: [
-                // {
-                //     icon: 'el-icon-lx-home',
-                //     index: 'dashboard',
-                //     title: '系统首页'
-                // },
+                {
+                    icon: 'el-icon-lx-home',
+                    index: 'dashboard',
+                    title: 'Chart Type 1'
+                },
                 {
                     icon: 'el-icon-lx-cascades',
                     index: 'table',
-                    title: '基础图表'
+                    title: 'Chart Type 2'
                 },
                 {
                     icon: 'el-icon-lx-copy',

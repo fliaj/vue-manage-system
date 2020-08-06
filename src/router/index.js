@@ -17,7 +17,7 @@ export default new Router({
                 {
                     path: '/dashboard',
                     component: () => import(/* webpackChunkName: "dashboard" */ '../components/page/Dashboard.vue'),
-                    meta: { title: '系统首页' }
+                    meta: { title: 'Chart Type 1' }
                 },
                 {
                     path: '/icon',
@@ -27,7 +27,7 @@ export default new Router({
                 {
                     path: '/table',
                     component: () => import(/* webpackChunkName: "table" */ '../components/page/BaseTable.vue'),
-                    meta: { title: '基础表格' }
+                    meta: { title: 'Chart Type 2' }
                 },
                 {
                     path: '/tabs',
