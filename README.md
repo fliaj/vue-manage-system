@@ -195,7 +195,7 @@ import 'element-ui/lib/theme-default/index.css'; // 默认主题
 ## License
 
 [MIT](https://github.com/lin-xin/vue-manage-system/blob/master/LICENSE) -->
-##如何部署
+## 如何部署
 1. 安装nvm
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
@@ -203,4 +203,19 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 2. 安装nodejs 10.16.0
 ```
 nvm install 10.16.0
+npm -v #确认安装成功
 ```
+3. (Optional) 用淘宝镜像cnpm代替npm
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+4. clone项目后进到项目目录
+5. 安装依赖
+```
+npm install
+```
+6. build & run
+```
+npm run serve
+```
+
