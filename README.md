@@ -1,4 +1,4 @@
-# vue-manage-system
+<!-- # vue-manage-system
 
 <a href="https://github.com/vuejs/vue">
     <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt="vue">
@@ -194,4 +194,13 @@ import 'element-ui/lib/theme-default/index.css'; // 默认主题
 
 ## License
 
-[MIT](https://github.com/lin-xin/vue-manage-system/blob/master/LICENSE)
+[MIT](https://github.com/lin-xin/vue-manage-system/blob/master/LICENSE) -->
+##如何部署
+1. 安装nvm
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+```
+2. 安装nodejs 10.16.0
+```
+nvm install 10.16.0
+```
